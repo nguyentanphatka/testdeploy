@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+
+<ul>
+    {% for e in object_list %}
+    <li> {{ e.student_code }} 
+    <a href="{% url 'student:student_edit' e.student_code %}">edit</a>
+    <a href="{% url 'student:student_delete' e.student_code %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'student:student_new' %}">New</a>
+
+{% endblock %}
